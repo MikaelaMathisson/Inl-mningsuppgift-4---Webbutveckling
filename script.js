@@ -1,6 +1,6 @@
 
 let arr = [];
-let count = 0;
+let count = 1;
 
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
@@ -26,11 +26,11 @@ inputBox.value = "";
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){                              //* Om jag klickar på uppgiften som skapats i listan, blir den ikryssad. Om redan ikryssad, så tas ikryssningen bort.
         e.target.classList.toggle("checked");
-        count++;
+        document.getElementById("count").innerHTML = count++;
     }
     else if(e.target.tagName === "SPAN"){                      //* Vid klick på soptunnan så tas uppgiften bort från listan.
         e.target.parentElement.remove();  
-        count--;                                          
+        document.getElementById("count").innerHTML = count--;                                      
     }
     }, false);
 
