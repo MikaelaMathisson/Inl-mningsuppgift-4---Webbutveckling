@@ -21,8 +21,6 @@ function addTask(){
 inputBox.value = "";
 }
 
-
-
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){                              //* Om jag klickar på uppgiften som skapats i listan, blir den ikryssad. Om redan ikryssad, så tas ikryssningen bort.
         e.target.classList.toggle("checked");
@@ -35,6 +33,6 @@ listContainer.addEventListener("click", function(e){
     }, false);
 
 
-
+    console.log(arr);
 
 
