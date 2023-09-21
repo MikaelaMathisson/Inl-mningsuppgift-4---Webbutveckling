@@ -1,4 +1,3 @@
-
 let arr = [];
 let count = 1;
 
@@ -36,3 +35,5 @@ listContainer.addEventListener("click", function(e){
     }, false);
 
     console.log(arr);
+    
+    
