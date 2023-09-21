@@ -1,3 +1,11 @@
+.logo{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    max-width: 500px;
+    padding: 1.5rem 0;
+    align-items: center;
+}
 .container{
     width: 100%;
     min-height: 100vh;
@@ -36,13 +44,20 @@ button{
     cursor: pointer;
     border-radius: 40px;
 }
+button:hover{
+    color: orange;
+}
 ul li{
     list-style: none;
-    font-size: 17px;
+    font-size: 1rem;
     padding: 12px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    color: white;
 }
 ul li::before{
     content: '';
@@ -83,4 +98,12 @@ ul li span:hover{
 }
 p{
 color: white;
+}
+input[type="text"] {
+    height: 30px;
+    outline: 0;
+    border: none;
+    font-style: italic;
+    font-size: 1rem;
+    flex-grow: 1;
 }
