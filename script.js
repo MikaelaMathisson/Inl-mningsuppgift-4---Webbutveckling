@@ -5,8 +5,6 @@ const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
 
-
-
 function addTask(){
     if(inputBox.value === ''){
         alert("You must write something!");
@@ -27,18 +25,12 @@ listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){                              // When click, it makes the task completed. If already completed (checked), the check gets removed.
         e.target.classList.toggle("checked");
         count++;
-        document.getElementById("count").innerHTML = count;
-    }
-    
+        document.getElementById("count").innerHTML = count; } 
     });
 
-    listContainer.addEventListener("click", function(e){
+listContainer.addEventListener("click", function(e){
         if(e.target.tagName === "SPAN"){                      // Click on trashcan deletes the task from the list
-            e.target.parentElement.remove();                                           
-        }
+            e.target.parentElement.remove(); }
         });
-
-
-
-
+ 
 console.log(arr);
