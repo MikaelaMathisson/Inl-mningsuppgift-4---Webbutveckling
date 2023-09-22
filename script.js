@@ -37,4 +37,3 @@ listContainer.addEventListener("click", function(e){
     }, false);
 
 console.log(arr);
-    
