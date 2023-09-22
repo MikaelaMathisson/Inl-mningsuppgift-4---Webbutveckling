@@ -29,11 +29,16 @@ listContainer.addEventListener("click", function(e){
         count++;
         document.getElementById("count").innerHTML = count;
     }
-    else if (e.target.tagName === "SPAN"){                      // Click on trashcan deletes the task from the list and removes it from completed tasks
-        e.target.parentElement.remove();  
-        count--; 
-        document.getElementById("count").innerHTML = count;                                      
-    }
-    }, false);
+    
+    });
+
+    listContainer.addEventListener("click", function(e){
+        if(e.target.tagName === "SPAN"){                      // Click on trashcan deletes the task from the list
+            e.target.parentElement.remove();                                           
+        }
+        });
+
+
+
 
 console.log(arr);
