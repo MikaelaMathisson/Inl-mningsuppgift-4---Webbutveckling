@@ -21,16 +21,24 @@ function addTask(){
 inputBox.value = "";
 }
 
-listContainer.addEventListener("click", function(e){
-    if(e.target.tagName === "LI"){                              // When click, it makes the task completed. If already completed (checked), the check gets removed.
-        e.target.classList.toggle("checked");
-        count++;
-        document.getElementById("count").innerHTML = count; } 
-    });
+    listContainer.addEventListener("click", function(e){
+        if (e.target.classList.contains('checked')) {
+            e.target.classList.remove('checked')
+            count--;
+            document.getElementById('count').innerHTML = count
+        } else {
+            e.target.classList.add('checked')
+            count++
+            document.getElementById('count').innerHTML = count
+        }
+    
+        });
 
 listContainer.addEventListener("click", function(e){
         if(e.target.tagName === "SPAN"){                      // Click on trashcan deletes the task from the list
-            e.target.parentElement.remove(); }
+            e.target.parentElement.remove();
+            count--;
+            document.getElementById('count').innerHTML = count
+        }
         });
- 
 console.log(arr);
