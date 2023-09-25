@@ -11,7 +11,7 @@ function addTask(){
     if(inputBox.value === ''){   
         alert("You must write something!");     // If input box is empty, this alert message shows up
     }
-    else{
+    else {
         let li = document.createElement("li"); // When something is written in the inputbox, this creates listitem and puts it in the list
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
@@ -29,7 +29,8 @@ inputBox.value = "";
             e.target.classList.remove('checked')
             count--;
             document.getElementById('count').innerHTML = count
-        } else {
+        } 
+        else {
             e.target.classList.add('checked')
             count++
             document.getElementById('count').innerHTML = count
