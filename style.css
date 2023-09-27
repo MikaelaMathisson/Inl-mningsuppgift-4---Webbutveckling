@@ -59,7 +59,7 @@ ul li{
     border-bottom: 1px solid lightgrey;
     color: white;
 }
-ul li::before{                                                      /*checkbox before the listitem*/
+ul li::before{                                                      /*checkbox before the li*/
     content: '';
     position: absolute;
     height: 28px;

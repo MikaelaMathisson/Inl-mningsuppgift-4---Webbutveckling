@@ -9,7 +9,7 @@ const listContainer = document.getElementById("list-container");
 //Function to add task, for displaying alert message if inputbux is empty, creates trashcan icon, and also saving data to array
 function addTask(){
     if(inputBox.value === ''){   
-        alert("You must write something!");     // If input box is empty, this alert message shows up
+        alert("You must write something!");    // If input box is empty, this alert message shows up
     }
     else {
         let li = document.createElement("li"); // When something is written in the inputbox, this creates listitem and puts it in the list
