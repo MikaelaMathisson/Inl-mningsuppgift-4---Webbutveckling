@@ -1,29 +1,30 @@
 .logo{
     display: flex;
+    font-size: 55px;
     margin: auto;
     flex-direction: column;
     max-width: 500px;
-    padding: 1.5rem 0;
-    align-items: center;
+    padding: 1,5rem 0;
 }
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #153677, #4e085f);
-    padding: 10px ;
-}
-.todo-app h2{
-    color: rgb(3, 109, 247);
-    display: flex; 
+    background: linear-gradient(135deg, #faabac, #ff8f91);
+    padding: 10px;
     align-items: center;
-    margin-bottom: 20px;
+    
 }
+
+.todo-app p, #count {
+    color: black;
+}
+
 .row{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #edeef0;
-    border-radius: 30px;
+    background: white;
+    border-radius: 4px;
     padding-left: 20px;
     margin-bottom: 25px;
 }
@@ -33,59 +34,90 @@ input{
     outline: none;
     background: transparent;
     padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-button{
-    border: none;
+#input-box{
+    border: 2px solid black;
+    border-radius: 4px;
+}
+#input-box:focus{  /*  Changes color of the border of the input box when clicked on*/
+    border: 2px solid blue;
+}
+
+#button{
+    border: 1px solid;
     outline: none;
-    padding: 16px 50px;
-    background: #0c32df;
-    color: #fff;
+    padding: 12px 15px;
+    background: lightgrey;
+    color: black;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 40px;
+    border-radius: 4px;
+    margin-left: 10px;
 }
-button:hover{                                                       /* When hovering mouse over element*/
-    color: orange; 
-}
+
 ul li{
     list-style: none;
-    font-size: 1rem;
-    padding: 12px 8px 12px 50px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 12px 50px 12px 0px;
     user-select: none;
     cursor: pointer; /*Makes it clickable*/
     position: relative;
     display: flex;
-    align-items: center;
-    border-bottom: 1px solid lightgrey;
-    color: white;
+    text-align: center;
+    /*border-bottom: 1px solid lightgrey; */
+    color: black;
+    animation: fadeInUp 1s;
+    justify-content: center;
+    
 }
+@keyframes fadeInUp{
+    0% {
+        opacity: 0; /* Fadar in text. Från början genomskinligt. vid 100% synlig*/
+        transform: translateY(20px); /* Gör att texten börjar 20px ner från start level*/
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 ul li::before{                                                      /*checkbox before the li*/
     content: '';
     position: absolute;
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(images/unchecked.png);
+    /*background-image: url(images/unchecked.png);*/
     background-size: cover;
     background-position: center;
     top: 12px;
     left: 8px;
 }
+
 ul li.checked{                                                       /* Decorations for when the task is completed */
-    color: grey ;
+    color: gray ;
     text-decoration: line-through;
-}
+    font-size: 20px;
+    margin: 0;
+    padding-right: 5px;
+    transition: color 1s;
+} 
+/*
 ul li.checked::before{
     background-image: url(images/checked.png);
-}
+}*/
+
 ul li span{
     position: absolute;
-    right: 0;
+    right: 40px;
     top: 5px;
     width: 40px;
     height: 40px;
     font-size: 22px;
-    color: white;
+    color: black;
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
@@ -100,10 +132,82 @@ p{
 color: white;
 }
 input[type="text"] {
-    height: 30px;
+    height: 20px;
     outline: 0;
     border: none;
-    font-style: italic;
     font-size: 1rem;
     flex-grow: 1;
+    border-radius: 0px;
+    border: 1px solid
+}
+
+.todo-app{
+    background-color: white;
+    padding: 20px 100px 20px 100px;
+    margin: auto;
+    width: 400px;
+    width: fit-content;   /* Får texten att följa med i rutan */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Ger papperslikt shadow, lite 3d effekt */
+    text-align: center;
+}
+
+#error {
+    font-style: italic;
+    font-size: 18px;
+    color: red;
+}
+
+@keyframes flashError{
+    0%, 20%, 40%, 60%, 80% {
+        opacity: 0;
+    }
+    10%, 30%, 50%, 70%, 90%{
+        opacity: 1;
+
+
+    }
+}
+
+.flash{
+    animation: flashError 1.5s 1;
+}
+
+
+.todo-app{
+    animation: slideIn 1s 1;
+}
+
+
+.logo {
+    animation: fadeIn 1s 1;
+}
+#count{
+    animation: fadeIn 1.3s 1;
+}
+.row, input, button, .form, p {
+    animation: fadeIn 1.7s 1;
+}
+
+@keyframes fadeIn { /* Keyframe to fade in the content in the div */
+    0% {
+        opacity: 0;
+    } 
+    70% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    } 
+} 
+
+@keyframes slideIn { /* Keyframe to slide in My ToDo from the top with a small "bounce at the end" */
+    0% {
+        transform: translateY(-70%);
+    }
+    50% {
+        transform: translateY(20%); /* This makes the little turnaround/ "bounce" in the end of the slide in */
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
