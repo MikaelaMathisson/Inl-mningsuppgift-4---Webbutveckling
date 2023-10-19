@@ -1,20 +1,19 @@
 /* CSS STYLING */
 
 .logo{
-    display: flex;
+    display: flex; /* Makes it automatically align */
     font-size: 55px;
     margin: auto;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 500px; /* Max width */
     padding: 1,5rem 0;
 }
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #faabac, #ff8f91);
+    background: linear-gradient(#facbcc, #ff8f91);
     padding: 10px;
     align-items: center;
-    
 }
 
 .todo-app p, #count {
@@ -74,6 +73,7 @@ ul li{
     justify-content: center;
     
 }
+
 @keyframes fadeInUp{
     0% {
         opacity: 0; /* Fadar in text. Från början genomskinligt. vid 100% synlig*/
@@ -84,7 +84,6 @@ ul li{
         transform: translateY(0);
     }
 }
-
 
 ul li::before{                                                      /*checkbox before the li*/
     content: '';
@@ -124,15 +123,15 @@ ul li span{
     text-align: center;
     border-radius: 50%;
 }
+
 ul li span:hover{  /* When hovering mouse over element*/
     background: #edeef0;
 }
-#list-container{
+
+#list-container, p{
     color: white;
 }
-p{
-color: white;
-}
+
 input[type="text"] {
     height: 20px;
     outline: 0;
