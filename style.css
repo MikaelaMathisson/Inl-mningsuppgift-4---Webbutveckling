@@ -1,19 +1,22 @@
 /* CSS STYLING */
 
 .logo{
-    display: flex; /* Makes it automatically align */
+    display: flex;
+    flex-direction: column;
     font-size: 55px;
     margin: auto;
-    flex-direction: column;
-    max-width: 500px; /* Max width */
+    max-width: 500px;
     padding: 1,5rem 0;
+
+     /* Makes it automatically align */
+     /* Max width */
 }
 .container{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(#facbcc, #ff8f91);
-    padding: 10px;
     align-items: center;
+    background: linear-gradient(#facbcc, #ff8f91);
+    min-height: 100vh;
+    padding: 10px;
+    width: 100%;
 }
 
 .todo-app p, #count {
